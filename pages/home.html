@@ -1,0 +1,46 @@
+<div class="container">
+  <div  class="row" ng-controller="CarouselDemoCtrl">
+    <div style="height:250px;">
+      <carousel interval="myInterval">
+        <slide ng-repeat="slide in slides" active="slide.active"> <img ng-src="{{slide.image}}" style="margin:auto;">
+          <div class="carousel-caption">
+            <h4>Slide {{$index}}</h4>
+            <p>{{slide.text}}</p>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+  </div></div>
+
+<div  class="container">
+  <div class="row" >
+    {{translation.ABOUT_US }}
+  </div></div>
+
+  <div  class="container">
+    <div class="row" ng-controller="itemController">
+      
+      <table class="table table-striped table-bordered table-hover">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Comment</th>
+        </tr>
+        <tr>
+          <td><input ng-model="query1" type="text"/></td>
+          <td><input ng-model="query2" type="text"/></td>
+          <td><input ng-model="query3" type="text"/></td>
+        </tr>
+        <tr ng-repeat="details in empDetail | filter:{id: query1, name:query2, comment:query3}">
+          <td>{{details.id}}</td>
+          <td>{{details.name}}</td>
+          <td>{{details.comment}}</td>
+        </tr>
+      </table>
+
+
+
+     
+    </div>
+  </div>
+

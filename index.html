@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="MyApp" ng-controller="myController">
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/master.css" rel="stylesheet">
+  <script  src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+  <script src="js/angular-resource.js"></script>
+  <script src="js/angular-route.js"></script>
+    <script src="js/angular-breadcrumb.min.js"></script>
+  <script src="js/ui-bootstrap-tpls-0.13.0.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/angularTranslationService.js"></script>
+</head>
+<body>
+
+
+<header class="col-md-12">
+
+    <div class="container">
+
+        <div class="row"> <a class="navbar-brand page-scroll pull-left" href="#/"><span>Angular Example</span></a>
+        <select class="form-control pull-right"  style="width: 100px; margin-top: 10px;" ng-change="translate()" ng-model="selectedLanguage">
+            <option value="en">English</option>
+            <option value="no">Norsk</option>
+        </select>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-default ">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav " >
+                    <li> <a href="#/" > {{translation.HOME }}</a> </li>
+
+
+                    <li> <a href="#about">{{translation.PRODUCT }}</a> </li>
+
+
+                    <li> <a href="#contact">{{translation.CONTACT }}</a> </li>
+
+                </ul>
+
+        </div> </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+</header>
+
+
+
+<div class="clearfix "></div>
+<!--<h4>Selected language: <strong>{{selectedLanguage}}</strong></h4>-->
+<!--<h4>Translated word goes here :   {{translation.HELLO_WORLD }} </h4>-->
+<div ng-view></div>
+
+<footer class="footer text-center">
+<div class="container">
+    <div class="row">
+      <p>Sticky Footer</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

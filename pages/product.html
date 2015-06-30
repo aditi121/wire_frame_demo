@@ -1,0 +1,20 @@
+<div ng-controller="productController" class="container">
+	<div class="row">
+		<!--  Products Container  -->
+		<p class="text-muted"> The products are displayed here by fetching the data from JSON file</p>
+		<div class="list-group">
+			<!--  Product Container  -->
+			<div class="list-group-item" ng-repeat="product in products">
+				<div>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></div>
+				<p> {{product.description}}</p>
+				<a href="#readMore"> {{product.read_more}}</a>
+				<!-- Image Gallery  -->
+				<ul class="img-thumbnails clearfix">
+					<li class="small-image pull-left thumbnail" ng-repeat="image in product.images"
+						style="height:280px; width:300px;"> <img ng-src="{{image}}" /> </li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</div>
